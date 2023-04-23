@@ -1,0 +1,31 @@
+body{
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    font-size: 50px;
+    overflow-x: hidden;
+}
+.container{
+    min-width: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+     filter: blur(5px);
+    transition: all 1s ease-in;
+}
+.container:nth-child(odd){
+    transform: translateX(-100%) scale(0.5);
+}
+.container:nth-child(even){
+    transform: translateX(100%) scale(0.5);
+}
+.container.show{
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+}
